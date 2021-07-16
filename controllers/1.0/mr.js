@@ -1,13 +1,6 @@
-const CRUD = require("../../helpers/crud");
 const { database_mr } = require("../../models");
-const moment = require("moment");
 const { Op } = require("sequelize");
-const { encrypt } = require("../../helpers/crypto");
-const { default: axios } = require("axios");
-const CRUDOptions = require("../../helpers/crudOptions");
-const { identity } = require("lodash");
 const e = require("cors");
-const { parse } = require("dotenv");
 class Mr {
   static list(req, res, next) {
     const title = req.query.title;
