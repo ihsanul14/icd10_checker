@@ -1,0 +1,533 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20210716.085251.2976.0.001.json",
+    "dumpEventTime": "2021-07-16T08:52:51Z",
+    "dumpEventTimeStamp": "1626400371042",
+    "processId": 2976,
+    "cwd": "D:\\NodeJS\\icd_10",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      ".\\app.js"
+    ],
+    "nodejsVersion": "v12.14.1",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.14.1",
+      "v8": "7.7.299.13-node.16",
+      "uv": "1.33.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.14.1/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.19041",
+    "osVersion": "Windows 10 Home Single Language",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 237812,
+        "nice": 0,
+        "sys": 198875,
+        "idle": 132046,
+        "irq": 13093
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 237062,
+        "nice": 0,
+        "sys": 182640,
+        "idle": 148828,
+        "irq": 4578
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 286062,
+        "nice": 0,
+        "sys": 175781,
+        "idle": 106671,
+        "irq": 3296
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 269437,
+        "nice": 0,
+        "sys": 155359,
+        "idle": 143718,
+        "irq": 2359
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 254531,
+        "nice": 0,
+        "sys": 176359,
+        "idle": 137625,
+        "irq": 2765
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 253500,
+        "nice": 0,
+        "sys": 165296,
+        "idle": 149718,
+        "irq": 2140
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 256859,
+        "nice": 0,
+        "sys": 152375,
+        "idle": 159281,
+        "irq": 1625
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 255406,
+        "nice": 0,
+        "sys": 142531,
+        "idle": 170578,
+        "irq": 1218
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "VMware Network Adapter VMnet1",
+        "internal": false,
+        "mac": "00:50:56:c0:00:01",
+        "address": "fe80::8c62:72f:5d66:f250",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 9
+      },
+      {
+        "name": "VMware Network Adapter VMnet1",
+        "internal": false,
+        "mac": "00:50:56:c0:00:01",
+        "address": "192.168.153.1",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "VMware Network Adapter VMnet8",
+        "internal": false,
+        "mac": "00:50:56:c0:00:08",
+        "address": "fe80::cd98:b87d:213:825f",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 3
+      },
+      {
+        "name": "VMware Network Adapter VMnet8",
+        "internal": false,
+        "mac": "00:50:56:c0:00:08",
+        "address": "192.168.17.1",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "5c:ba:ef:c8:c1:db",
+        "address": "fe80::249d:eebe:52dd:6e38",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 7
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "5c:ba:ef:c8:c1:db",
+        "address": "192.168.100.59",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "vEthernet (WSL)",
+        "internal": false,
+        "mac": "00:15:5d:db:4d:96",
+        "address": "fe80::d08d:b8d:9c89:fa55",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 45
+      },
+      {
+        "name": "vEthernet (WSL)",
+        "internal": false,
+        "mac": "00:15:5d:db:4d:96",
+        "address": "172.21.64.1",
+        "netmask": "255.255.240.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "LAPTOP-KF4JRP34"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff69d691759",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10873"
+    },
+    {
+      "pc": "0x00007ff69d695b7c",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+28316"
+    },
+    {
+      "pc": "0x00007ff69d694b38",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+24152"
+    },
+    {
+      "pc": "0x00007ff69d78433b",
+      "symbol": "v8::base::CPU::has_sse+37723"
+    },
+    {
+      "pc": "0x00007ff69df88c5e",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff69df70ca1",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff69de3e56c",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff69de49910",
+      "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1312"
+    },
+    {
+      "pc": "0x00007ff69de46444",
+      "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
+    },
+    {
+      "pc": "0x00007ff69de3bcd3",
+      "symbol": "v8::internal::Heap::CollectGarbage+1283"
+    },
+    {
+      "pc": "0x00007ff69de3a4a4",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2356"
+    },
+    {
+      "pc": "0x00007ff69de5b775",
+      "symbol": "v8::internal::Factory::NewFillerObject+53"
+    },
+    {
+      "pc": "0x00007ff69dbc7a49",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+4057"
+    },
+    {
+      "pc": "0x00007ff69e3b463d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+567949"
+    },
+    {
+      "pc": "0x00007ff69e3356c1",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+47889"
+    },
+    {
+      "pc": "0x0000010d223b4bf3",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2153746432,
+    "totalCommittedMemory": 2153746432,
+    "usedMemory": 2144256144,
+    "availableMemory": 48298152,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 261872,
+        "used": 32296,
+        "available": 229576
+      },
+      "new_space": {
+        "memorySize": 4194304,
+        "committedMemory": 4194304,
+        "capacity": 2094976,
+        "used": 287848,
+        "available": 1807128
+      },
+      "old_space": {
+        "memorySize": 2133438464,
+        "committedMemory": 2133438464,
+        "capacity": 2129327160,
+        "used": 2129229552,
+        "available": 97608
+      },
+      "code_space": {
+        "memorySize": 950272,
+        "committedMemory": 950272,
+        "capacity": 704160,
+        "used": 704160,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 1576960,
+        "committedMemory": 1576960,
+        "capacity": 969440,
+        "used": 969440,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 13275136,
+        "committedMemory": 13275136,
+        "capacity": 13029296,
+        "used": 13029296,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 49152,
+        "committedMemory": 49152,
+        "capacity": 3552,
+        "used": 3552,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 2094976,
+        "used": 0,
+        "available": 2094976
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 347.593,
+    "kernelCpuSeconds": 117.328,
+    "cpuConsumptionPercent": 180.903,
+    "maxRss": 2337574912,
+    "pageFaults": {
+      "IORequired": 2507380,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 1042,
+      "writes": 6
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "=C:": "C:\\",
+    "ALLOWAPP": "auth,user,institution,application,payment",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "API_DEV": "",
+    "APPDATA": "C:\\Users\\hrd\\AppData\\Roaming",
+    "APPLICATION_REST": "https://www.smart-rs.online:3001/v1",
+    "APPNAME": "patient",
+    "AUTH_REST": "https://www.smart-rs.online:3000/v1",
+    "BOOKING_REST": "https://www.smart-rs.online:3007/v1",
+    "CHECKIN_REST": "https://www.smart-rs.online:3008/v1",
+    "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
+    "ChocolateyLastPathUpdate": "132621693792464374",
+    "ChocolateyToolsLocation": "C:\\tools",
+    "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_18312_GMOEGVRYOZARHFLA",
+    "CLASSPATH": ".;",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "LAPTOP-KF4JRP34",
+    "ComSpec": "C:\\windows\\system32\\cmd.exe",
+    "DATABASE": "test_node",
+    "DATESTRING": "true",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "ELASTIC_APM_SERVER_URL": "http://172.18.98.76:8200",
+    "EMAIL": "",
+    "EMAIL_HOST": "",
+    "FINANCE_REST": "https://www.smart-rs.online:3012/v1",
+    "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+    "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+    "GOPATH": "D:\\Golang",
+    "GOROOT": "C:\\Go",
+    "HC_REST": "https://www.smart-rs.online:3013/v1",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\hrd",
+    "HOST": "",
+    "INSTITUTION_REST": "https://www.smart-rs.online:3003/v1",
+    "JAVA_HOME": "C:\\Program Files\\Java\\jdk1.8.0_211",
+    "LABORATORY_REST": "https://www.smart-rs.online:3009/v1",
+    "LOCALAPPDATA": "C:\\Users\\hrd\\AppData\\Local",
+    "LOGONSERVER": "\\\\LAPTOP-KF4JRP34",
+    "MAILPORT": "",
+    "MASTER_REST": "https://www.smart-rs.online:3004/v1",
+    "MLFLOW_CONDA_HOME": "C:\\tools\\Anaconda3\\_conda.exe",
+    "MLFLOW_TRACKING_URI": "http://localhost:5000",
+    "MR_REST": "https://www.smart-rs.online:3006/v1",
+    "NODE_ENV": "development",
+    "NUMBER_OF_PROCESSORS": "8",
+    "OneDrive": "C:\\Users\\hrd\\OneDrive",
+    "OnlineServices": "Online Services",
+    "ORIGINAL_XDG_CURRENT_DESKTOP": "undefined",
+    "OS": "Windows_NT",
+    "PASS": "",
+    "PASSWORD": "12345",
+    "Path": "C:\\Go\\bin;C:\\Users\\hrd\\AppData\\Local\\Programs\\Python\\Python37\\Scripts\\;C:\\Users\\hrd\\AppData\\Local\\Programs\\Python\\Python37\\;C:\\Program Files (x86)\\VMware\\VMware Workstation\\bin\\;C:\\Python38\\Scripts\\;C:\\Python38\\;C:\\Python39\\Scripts\\;C:\\Python39\\;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\windows\\System32\\OpenSSH\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Git\\cmd;C:\\Go\\bin;C:\\Program Files\\nodejs\\;C:\\tools\\php80;C:\\composer;C:\\Python32;C:\\Program Files\\MIT\\Kerberos\\bin;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\ProgramData\\chocolatey\\lib\\elasticsearch\\tools\\elasticsearch-7.12.0\\bin;D:\\Golang\\bin;C:\\Program Files\\Kubernetes\\Minikube;C:\\wkhtmltopdf\\bin;;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Users\\hrd\\AppData\\Local\\Programs\\Python\\Python37\\Scripts\\;C:\\Users\\hrd\\AppData\\Local\\Programs\\Python\\Python37\\;C:\\Users\\hrd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\hrd\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\hrd\\go\\bin;C:\\Users\\hrd\\AppData\\Roaming\\npm;D:\\Tools\\Redis;C:\\Users\\hrd\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\tools\\mysql\\current\\bin;C:\\wkhtmltopdf\\bin;C:\\Program Files\\heroku\\bin",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW;.CPL",
+    "PATIENT_REST": "https://www.smart-rs.online:3005/v1",
+    "PAYMENT_REST": "https://www.smart-rs.online:3015/v1",
+    "PG_HOST": "127.0.0.1",
+    "PG_PORT": "5432",
+    "PG_SSL_ENABLED": "true",
+    "PG_USERNAME": "postgres",
+    "PHARMACY_REST": "https://www.smart-rs.online:3011/v1",
+    "platformcode": "KV",
+    "PORT": "5000",
+    "PRIVATE_KEY_PATH": "",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",
+    "PROCESSOR_LEVEL": "23",
+    "PROCESSOR_REVISION": "1801",
+    "PROD_DATABASE": "",
+    "PROD_PASSWORD": "",
+    "PROD_PG_HOST": "",
+    "PROD_PG_PORT": "",
+    "PROD_PG_USERNAME": "",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PSModulePath": "C:\\Users\\hrd\\OneDrive\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "PUBLIC": "C:\\Users\\Public",
+    "PUBLIC_KEY_PATH": "",
+    "RADIOLOGY_REST": "https://www.smart-rs.online:3010/v1",
+    "Redis": "D:\\Tools\\Redis",
+    "REDIS_HOST": "127.0.0.1",
+    "REDIS_PASSWORD": "P@ssw0rd",
+    "REDIS_PORT": "6379",
+    "RegionCode": "APJ",
+    "ROOT_FOLDER": "",
+    "SECRET_API": "-[2uHdPhHks4b%Gm%^c+B8DDys]3W<)(",
+    "SECRET_CONT": ">QG@9dpCkWPF+Y%P",
+    "SECRET_CRYPTO": "[Hy_6Axbm<yYmfQ7",
+    "SERVICE": "",
+    "SESSIONNAME": "Console",
+    "SSL": "false",
+    "SSL_BUNDLE_PATH": "",
+    "SSL_CERT_PATH": "",
+    "SSL_KEY_PATH": "",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\windows",
+    "SYSTEM_TITLE": "Patient Service",
+    "TEMP": "C:\\Users\\hrd\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\hrd\\AppData\\Local\\Temp",
+    "TWILIO_ACCOUNT_SID": "AC0dce8416440c78c2a1b59f46ac119e82",
+    "TWILIO_AUTH_TOKEN": "e664ecfdef9a55b7f15dbb25a13eea67",
+    "TZ": "+00:00",
+    "UPLOAD_FOLDER": "",
+    "USERDOMAIN": "LAPTOP-KF4JRP34",
+    "USERDOMAIN_ROAMINGPROFILE": "LAPTOP-KF4JRP34",
+    "USERNAME": "hrd",
+    "USERPROFILE": "C:\\Users\\hrd",
+    "USER_REST": "https://www.smart-rs.online:3002/v1",
+    "UTC": "false",
+    "WEB": "",
+    "windir": "C:\\windows",
+    "TERM_PROGRAM": "vscode",
+    "TERM_PROGRAM_VERSION": "1.58.1",
+    "LANG": "en_US.UTF-8",
+    "COLORTERM": "truecolor",
+    "VSCODE_GIT_IPC_HANDLE": "\\\\.\\pipe\\vscode-git-97977ba871-sock",
+    "GIT_ASKPASS": "c:\\Users\\hrd\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh",
+    "VSCODE_GIT_ASKPASS_NODE": "C:\\Users\\hrd\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+    "VSCODE_GIT_ASKPASS_MAIN": "c:\\Users\\hrd\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\windows\\SYSTEM32\\ntdll.dll",
+    "C:\\windows\\System32\\KERNEL32.DLL",
+    "C:\\windows\\System32\\KERNELBASE.dll",
+    "C:\\windows\\System32\\WS2_32.dll",
+    "C:\\windows\\System32\\RPCRT4.dll",
+    "C:\\windows\\System32\\ADVAPI32.dll",
+    "C:\\windows\\SYSTEM32\\dbghelp.dll",
+    "C:\\windows\\System32\\msvcrt.dll",
+    "C:\\windows\\System32\\ucrtbase.dll",
+    "C:\\windows\\System32\\sechost.dll",
+    "C:\\windows\\System32\\USER32.dll",
+    "C:\\windows\\System32\\win32u.dll",
+    "C:\\windows\\System32\\GDI32.dll",
+    "C:\\windows\\System32\\gdi32full.dll",
+    "C:\\windows\\System32\\msvcp_win.dll",
+    "C:\\windows\\System32\\PSAPI.DLL",
+    "C:\\windows\\System32\\CRYPT32.dll",
+    "C:\\windows\\System32\\bcrypt.dll",
+    "C:\\windows\\SYSTEM32\\USERENV.dll",
+    "C:\\windows\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\windows\\SYSTEM32\\WINMM.dll",
+    "C:\\windows\\System32\\IMM32.DLL",
+    "C:\\windows\\SYSTEM32\\powrprof.dll",
+    "C:\\windows\\SYSTEM32\\UMPDC.dll",
+    "C:\\windows\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\windows\\system32\\uxtheme.dll",
+    "C:\\windows\\System32\\combase.dll",
+    "C:\\windows\\system32\\mswsock.dll",
+    "C:\\windows\\SYSTEM32\\kernel.appcore.dll",
+    "C:\\windows\\System32\\bcryptprimitives.dll",
+    "C:\\windows\\System32\\NSI.dll",
+    "C:\\windows\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\windows\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\windows\\SYSTEM32\\DNSAPI.dll",
+    "C:\\windows\\system32\\napinsp.dll",
+    "C:\\windows\\system32\\pnrpnsp.dll",
+    "C:\\windows\\system32\\wshbth.dll",
+    "C:\\windows\\system32\\NLAapi.dll",
+    "C:\\windows\\System32\\winrnr.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\windows\\System32\\fwpuclnt.dll"
+  ]
+}
