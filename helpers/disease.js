@@ -1,4 +1,8 @@
-function getWhereClause(where, gejala) {
+function getWhereClause(gejala) {
+  let where = "";
+  if (gejala.length != 0) {
+    where = " where ";
+  }
   for (let g in gejala) {
     if (g != gejala.length - 1) {
       where = where + `'${gejala[g]}' like ANY(gejala) AND `;

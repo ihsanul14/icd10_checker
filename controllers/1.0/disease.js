@@ -55,7 +55,7 @@ class Disease {
       }
     }
     const id = req.body.id;
-    let where = getWhereClause(" where ", gejala);
+    let where = getWhereClause(gejala);
     let querys = `
       SELECT name_en as variant_name, b.icd_10 as icd_10, b.gejala as gejala 
       FROM database_mr a
