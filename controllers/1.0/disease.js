@@ -3,48 +3,8 @@ const { Op, where } = require("sequelize");
 const { QueryTypes } = require("sequelize");
 const e = require("cors");
 const { getWhereClause, refactorResponse } = require("../../helpers/disease");
-const { MongoClient } = require("mongodb");
-const redis = require("redis");
-
-const redis_client = redis.createClient({
-  host: process.env.REDIS_HOST,
-  port: process.env.REDIS_PORT,
-  password: process.env.REDIS_PASSWORD,
-});
-
-const uri = `mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}`;
-var mongo_client = new MongoClient(uri);
-MongoClient.connect(uri, function (err, dbo) {
-  if (err) throw err;
-  mongo_client = dbo.db(process.env.MONGO_DB);
-});
 
 class Disease {
-  static store_icd_list(req, res, next) {
-    let start = Date.now();
-    var fs = require("fs");
-
-    redis_client.on("error", (err) => {
-      console.log("Error " + err);
-    });
-    fs.readFile("icd10_list.txt", "utf8", function (err, data) {
-      if (err) throw err;
-      try {
-        client.lrange("icd10_list", data, function (err, reply) {
-          if (err) throw err;
-        });
-        res.status(200).send({
-          message: "succes insert into redis",
-        });
-      } catch (err) {
-        res.status(500).send({
-          message: err.message || "Internal Server Error",
-        });
-      }
-    });
-    console.log(`elapsed time : ${Date.now() - start} ms`);
-  }
-
   static async list(req, res, next) {
     let start = Date.now();
     let gejala = [];
@@ -71,58 +31,6 @@ class Disease {
         jumlah: response.length,
         data: response,
       });
-    } catch (err) {
-      res.status(500).send({
-        message: err.message || "Internal Server Error",
-      });
-    }
-    console.log(`elapsed time : ${Date.now() - start} ms`);
-  }
-
-  static async listRedis(req, res, next) {
-    let start = Date.now();
-    try {
-      redis_client.lrange("icd10_list", 0, -1, function (err, response) {
-        if (err) throw err;
-        for (let i = 0; i < response.length; i++) {
-          response[i] = JSON.parse(response[i]);
-        }
-        res.status(200).send({
-          jumlah: response.length,
-          data: response,
-        });
-      });
-    } catch (err) {
-      res.status(500).send({
-        message: err.message || "Internal Server Error",
-      });
-    }
-    console.log(`elapsed time : ${Date.now() - start} ms`);
-  }
-
-  static async listMongo(req, res, next) {
-    let dbo = mongo_client;
-    let start = Date.now();
-    let gejala = [];
-    for (let [key, value] of Object.entries(req.body)) {
-      if (key.startsWith("gejala_") && value != "") {
-        gejala.push(value);
-      }
-    }
-    try {
-      dbo
-        .collection("icd10_list")
-        .find({
-          gejala: { $all: gejala },
-        })
-        .toArray(function (err, response) {
-          if (err) throw err;
-          response = refactorResponse([], response, gejala);
-          res.status(200).send({
-            jumlah: response.length,
-            data: response,
-          });
-        });
     } catch (err) {
       res.status(500).send({
         message: err.message || "Internal Server Error",
@@ -199,16 +107,16 @@ class Disease {
   }
 
   static async update(req, res, next) {
-    const id = req.body.id;
+    const id = req.body.icd_10;
 
     disease_data
       .update(req.body, {
-        where: { id: id },
+        where: { icd_10: id },
       })
       .then((num) => {
         if (num == 1) {
           res.send({
-            message: `Project with id ${id} was updated successfully.`,
+            message: `Disease with icd_10 ${id} was updated successfully.`,
           });
         } else {
           res.send({
@@ -228,12 +136,12 @@ class Disease {
 
     disease_data
       .destroy({
-        where: { project_id: id },
+        where: { icd_10: id },
       })
       .then((num) => {
         if (num == 1) {
           res.send({
-            message: `Project with id ${id} was deleted successfully!`,
+            message: `Disease with icd_10 ${id} was deleted successfully!`,
           });
         } else {
           res.send({
@@ -243,7 +151,7 @@ class Disease {
       })
       .catch((err) => {
         res.status(500).send({
-          message: "Could not delete Project with id=" + id,
+          message: "Could not delete disease with icd_10=" + id,
         });
       });
   }

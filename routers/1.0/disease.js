@@ -6,8 +6,7 @@ const { authenticate, bearer, keySecretVerify } = require("../../middlewares");
 const { DiseaseController } = require("../../controllers/1.0");
 
 router.post("/", DiseaseController.list);
-router.post("/redis", DiseaseController.listRedis);
-router.post("/mongo", DiseaseController.listMongo);
-router.post("/redis/add", DiseaseController.store_icd_list);
 router.post("/add", DiseaseController.create);
+router.put("/update", DiseaseController.update);
+router.delete("/delete/:id", DiseaseController.delete);
 module.exports = router;
