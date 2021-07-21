@@ -1,4 +1,4 @@
-const { disease_data, sequelize } = require("../../models");
+const { disease_data, sequelize, database_mr } = require("../../models");
 const { Op, where } = require("sequelize");
 const { QueryTypes } = require("sequelize");
 const e = require("cors");
@@ -16,21 +16,19 @@ class Disease {
     }
     const id = req.body.id;
     let where = getWhereClause(gejala);
-    let querys = `
-      SELECT name_en as variant_name, b.icd_10 as icd_10, b.gejala as gejala 
-      FROM database_mr a
-      INNER JOIN disease_data b
-      ON a.icd_10 = b.icd_10
-    `;
     try {
-      const records = await sequelize.query(querys + where, {
-        type: QueryTypes.SELECT,
-      });
-      response = refactorResponse(response, records, gejala);
-      res.status(200).send({
-        jumlah: response.length,
-        data: response,
-      });
+      await disease_data
+        .findAll({
+          where: sequelize.literal(where),
+          include: [database_mr],
+        })
+        .then((data) => {
+          data = refactorResponse([], data, gejala);
+          res.send({
+            jumlah: data.length,
+            data: data,
+          });
+        });
     } catch (err) {
       res.status(500).send({
         message: err.message || "Internal Server Error",

@@ -20,86 +20,6 @@ MongoClient.connect(uri, function (err, dbo) {
 });
 
 class DiseaseMongo {
-  //   static store_icd_list(req, res, next) {
-  //     let start = Date.now();
-  //     var fs = require("fs");
-
-  //     redis_client.on("error", (err) => {
-  //       console.log("Error " + err);
-  //     });
-  //     fs.readFile("icd10_list.txt", "utf8", function (err, data) {
-  //       if (err) throw err;
-  //       try {
-  //         client.lrange("icd10_list", data, function (err, reply) {
-  //           if (err) throw err;
-  //         });
-  //         res.status(200).send({
-  //           message: "succes insert into redis",
-  //         });
-  //       } catch (err) {
-  //         res.status(500).send({
-  //           message: err.message || "Internal Server Error",
-  //         });
-  //       }
-  //     });
-  //     console.log(`elapsed time : ${Date.now() - start} ms`);
-  //   }
-
-  //   static async list(req, res, next) {
-  //     let start = Date.now();
-  //     let gejala = [];
-  //     let response = [];
-  //     for (let [key, value] of Object.entries(req.body)) {
-  //       if (key.startsWith("gejala_") && value != "") {
-  //         gejala.push(value);
-  //       }
-  //     }
-  //     const id = req.body.id;
-  //     let where = getWhereClause(gejala);
-  //     let querys = `
-  //       SELECT name_en as variant_name, b.icd_10 as icd_10, b.gejala as gejala
-  //       FROM database_mr a
-  //       INNER JOIN disease_data b
-  //       ON a.icd_10 = b.icd_10
-  //     `;
-  //     try {
-  //       const records = await sequelize.query(querys + where, {
-  //         type: QueryTypes.SELECT,
-  //       });
-  //       response = refactorResponse(response, records, gejala);
-  //       res.status(200).send({
-  //         jumlah: response.length,
-  //         data: response,
-  //       });
-  //     } catch (err) {
-  //       res.status(500).send({
-  //         message: err.message || "Internal Server Error",
-  //       });
-  //     }
-  //     console.log(`elapsed time : ${Date.now() - start} ms`);
-  //   }
-
-  //   static async listRedis(req, res, next) {
-  //     let start = Date.now();
-  //     try {
-  //       redis_client.lrange("icd10_list", 0, -1, function (err, response) {
-  //         if (err) throw err;
-  //         for (let i = 0; i < response.length; i++) {
-  //           response[i] = JSON.parse(response[i]);
-  //         }
-  //         res.status(200).send({
-  //           jumlah: response.length,
-  //           data: response,
-  //         });
-  //       });
-  //     } catch (err) {
-  //       res.status(500).send({
-  //         message: err.message || "Internal Server Error",
-  //       });
-  //     }
-  //     console.log(`elapsed time : ${Date.now() - start} ms`);
-  //   }
-
   static async list(req, res, next) {
     let dbo = mongo_client;
     let start = Date.now();
@@ -208,7 +128,7 @@ class DiseaseMongo {
       .then((num) => {
         if (num == 1) {
           res.send({
-            message: `Project with id ${id} was updated successfully.`,
+            message: `disease with id ${id} was updated successfully.`,
           });
         } else {
           res.send({
@@ -233,17 +153,17 @@ class DiseaseMongo {
       .then((num) => {
         if (num == 1) {
           res.send({
-            message: `Project with id ${id} was deleted successfully!`,
+            message: `disease with id ${id} was deleted successfully!`,
           });
         } else {
           res.send({
-            message: `Cannot delete Project with id=${id}. Maybe Disease was not found!`,
+            message: `Cannot delete disease with id=${id}. Maybe Disease was not found!`,
           });
         }
       })
       .catch((err) => {
         res.status(500).send({
-          message: "Could not delete Project with id=" + id,
+          message: "Could not delete disease with id=" + id,
         });
       });
   }

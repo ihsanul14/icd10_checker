@@ -24,5 +24,10 @@ module.exports = (sequelize, DataTypes) => {
       hooks: {},
     }
   );
+  mr.associate = function (models) {
+    mr.hasMany(models.disease_data, {
+      foreignKey: "icd_10",
+    });
+  };
   return mr;
 };

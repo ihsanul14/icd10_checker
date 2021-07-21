@@ -24,5 +24,10 @@ module.exports = (sequelize, DataTypes) => {
       hooks: {},
     }
   );
+  disease.associate = function (models) {
+    disease.belongsTo(models.database_mr, {
+      foreignKey: "icd_10",
+    });
+  };
   return disease;
 };
